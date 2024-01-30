@@ -1,9 +1,9 @@
 #include "binary_trees.h"
 #include "102-binary_tree_is_complete.c"
 /**
- * check_max - goes through a binary tree cheking ropt as max value
- * @tree: pointer to the root
- * Return: 1 if all nodes are max, 0 in other cases
+ * check_max - goes through a binary tree
+ * @tree: pointer to the root node
+ * Return: 1 if all nodes are max
  **/
 int check_max(const binary_tree_t *tree)
 {
@@ -16,7 +16,9 @@ int check_max(const binary_tree_t *tree)
 	if (tree->left)
 	{
 		if (tree->n <= tree->left->n)
+        {
 			return (0);
+        }
 		tmp1 = check_max(tree->left);
 	}
 	if (tree->right)
@@ -28,19 +30,21 @@ int check_max(const binary_tree_t *tree)
 	return (tmp1 && tmp2);
 }
 /**
- * binary_tree_is_heap - checks if a binary tree is heap
+ * binary_tree_is_heap - checks if heap
  * @tree: pointer to the node
- * Return: 1 in case BTS /  0 otherwise
+ * Return: 1 in case BTS
  **/
 int binary_tree_is_heap(const binary_tree_t *tree)
 {
-	int tmp;
+	int tp;
 
 	if (!tree)
+    {
 		return (0);
+    }
 
-	tmp = binary_tree_is_complete(tree);
-	if (!tmp)
+	tp = binary_tree_is_complete(tree);
+	if (!tp)
 		return (0);
 	return (check_max(tree));
 }

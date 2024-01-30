@@ -7,30 +7,10 @@ void push(binary_tree_t *node, levelorder_queue_t *head,
 void pop(levelorder_queue_t **head);
 int binary_tree_is_complete(const binary_tree_t *tree);
 
-/**
- * create_node - Creates a new levelorder_queue_t node.
- * @node: The binary tree node for the new node to contain.
- *
- * Return: If an error occurs, NULL.
- *         Otherwise, a pointer to the new node.
- */
-levelorder_queue_t *create_node(binary_tree_t *node)
-{
-	levelorder_queue_t *new;
-
-	new = malloc(sizeof(levelorder_queue_t));
-	if (new == NULL)
-		return (NULL);
-
-	new->node = node;
-	new->next = NULL;
-
-	return (new);
-}
 
 /**
- * free_queue - Frees a levelorder_queue_t queue.
- * @head: A pointer to the head of the queue.
+ * free_queue - Frees a levelorder.
+ * @head: A pointer to the head.
  */
 void free_queue(levelorder_queue_t *head)
 {
@@ -81,13 +61,9 @@ void pop(levelorder_queue_t **head)
 }
 
 /**
- * binary_tree_is_complete - Checks if a binary tree is complete.
- * @tree: A pointer to the root node of the tree to traverse.
- *
- * Return: If the tree is NULL or not complete, 0.
- *         Otherwise, 1.
- *
- * Description: Upon malloc failure, exits with a status code of 1.
+ * binary_tree_is_complete - Checks if complete.
+ * @tree: A pointer to the root node.
+ * Return: 0 if not complete
  */
 int binary_tree_is_complete(const binary_tree_t *tree)
 {
@@ -95,7 +71,9 @@ int binary_tree_is_complete(const binary_tree_t *tree)
 	unsigned char flag = 0;
 
 	if (tree == NULL)
+    {
 		return (0);
+    }
 
 	head = tail = create_node((binary_tree_t *)tree);
 	if (head == NULL)
@@ -129,3 +107,25 @@ int binary_tree_is_complete(const binary_tree_t *tree)
 	}
 	return (1);
 }
+/**
+ * create_node - Creates a new level.
+ * @node: The binary tree node.
+ * Return: NULL if error.
+ */
+ 
+levelorder_queue_t *create_node(binary_tree_t *node)
+{
+	levelorder_queue_t *new;
+
+	new = malloc(sizeof(levelorder_queue_t));
+	if (new == NULL)
+    {
+		return (NULL);
+    }
+
+	new->node = node;
+	new->next = NULL;
+
+	return (new);
+}
+

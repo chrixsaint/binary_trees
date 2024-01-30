@@ -2,12 +2,11 @@
 #include "limits.h"
 
 /**
- * is_bst_helper - Checks if a binary tree is a valid binary search tree.
- * @tree: A pointer to the root node of the tree to check.
+ * is_bst_helper - Checks if a binary tree is valid
+ * @tree: A pointer to the root node
  * @lo: The value of the smallest node visited thus far.
  * @hi: The value of the largest node visited this far.
- *
- * Return: If the tree is a valid BST, 1, otherwise, 0.
+ * Return: If the tree is a valid BST
  */
 int is_bst_helper(const binary_tree_t *tree, int lo, int hi)
 {
@@ -22,10 +21,9 @@ int is_bst_helper(const binary_tree_t *tree, int lo, int hi)
 }
 
 /**
- * binary_tree_is_bst - Checks if a binary tree is a valid binary search tree.
- * @tree: A pointer to the root node of the tree to check.
- *
- * Return: 1 if tree is a valid BST, and 0 otherwise
+ * binary_tree_is_bst - Checks if a binary tree is a valid
+ * @tree: A pointer to the root node
+ * Return: 1 if tree is valid
  */
 int binary_tree_is_bst(const binary_tree_t *tree)
 {
