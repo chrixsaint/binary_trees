@@ -19,9 +19,9 @@ avl_t *array_to_avl(int *array, size_t size)
 		for (xdx = 0; xdx < idx; xdx++)
 		{
 			if (array[xdx] == array[idx])
-            {
+			{
 				break;
-            }
+			}
 		}
 		if (xdx == idx)
 		{

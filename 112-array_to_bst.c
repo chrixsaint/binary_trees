@@ -12,9 +12,9 @@ bst_t *array_to_bst(int *array, size_t size)
 	size_t idx, xdx;
 
 	if (array == NULL)
-    {
+	{
 		return (NULL);
-    }
+	}
 
 	for (idx = 0; idx < size; idx++)
 	{

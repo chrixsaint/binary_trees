@@ -57,9 +57,9 @@ bst_t *bst_delete(bst_t *root, bst_t *node)
 bst_t *inorder_successor(bst_t *root)
 {
 	while (root->left != NULL)
-    {
+	{
 		root = root->left;
-    }
+	}
 	return (root);
 }
 

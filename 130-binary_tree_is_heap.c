@@ -16,9 +16,9 @@ int check_max(const binary_tree_t *tree)
 	if (tree->left)
 	{
 		if (tree->n <= tree->left->n)
-        {
+		{
 			return (0);
-        }
+		}
 		tmp1 = check_max(tree->left);
 	}
 	if (tree->right)
@@ -39,9 +39,9 @@ int binary_tree_is_heap(const binary_tree_t *tree)
 	int tp;
 
 	if (!tree)
-    {
+	{
 		return (0);
-    }
+	}
 
 	tp = binary_tree_is_complete(tree);
 	if (!tp)

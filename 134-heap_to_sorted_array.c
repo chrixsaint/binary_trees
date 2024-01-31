@@ -40,9 +40,9 @@ int *heap_to_sorted_array(heap_t *heap, size_t *size)
 	a = malloc(sizeof(int) * (*size));
 
 	if (!a)
-    {
+	{
 		return (NULL);
-    }
+	}
 
 	for (idx = 0; heap; idx++)
 		a[idx] = heap_extract(&heap);

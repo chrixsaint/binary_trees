@@ -71,9 +71,9 @@ int binary_tree_is_complete(const binary_tree_t *tree)
 	unsigned char flag = 0;
 
 	if (tree == NULL)
-    {
+	{
 		return (0);
-    }
+	}
 
 	head = tail = create_node((binary_tree_t *)tree);
 	if (head == NULL)
@@ -112,16 +112,16 @@ int binary_tree_is_complete(const binary_tree_t *tree)
  * @node: The binary tree node.
  * Return: NULL if error.
  */
- 
+
 levelorder_queue_t *create_node(binary_tree_t *node)
 {
 	levelorder_queue_t *new;
 
 	new = malloc(sizeof(levelorder_queue_t));
 	if (new == NULL)
-    {
+	{
 		return (NULL);
-    }
+	}
 
 	new->node = node;
 	new->next = NULL;

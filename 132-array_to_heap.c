@@ -12,9 +12,9 @@ heap_t *array_to_heap(int *array, size_t size)
 	heap_t *root = NULL;
 
 	for (idx = 0; idx < size; idx++)
-    {
+	{
 		heap_insert(&root, array[idx]);
-    }
+	}
 
 	return (root);
 }
