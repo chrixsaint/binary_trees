@@ -65,9 +65,7 @@ avl_t *avl_insert_recursive(avl_t **tree, avl_t *parent,
 	{
 		(*tree)->right = avl_insert_recursive(&(*tree)->right, *tree, new, value);
 		if ((*tree)->right == NULL)
-		{
 			return (NULL);
-		}
 	}
 	else
 		return (*tree);
@@ -89,7 +87,6 @@ avl_t *avl_insert_recursive(avl_t **tree, avl_t *parent,
 		(*tree)->right = binary_tree_rotate_right((*tree)->right);
 		*tree = binary_tree_rotate_left(*tree);
 	}
-
 	return (*tree);
 }
 
