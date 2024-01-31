@@ -42,10 +42,8 @@ void levels_rec(ll *head, void (*func)(int))
 {
 	ll *children = NULL, *curr = NULL;
 
-	if (head == NULL)
-	{
+	if (!head)
 		return;
-	}
 	for (curr = head; curr != NULL; curr = curr->next)
 	{
 		func(curr->node->n);
@@ -63,11 +61,9 @@ void levels_rec(ll *head, void (*func)(int))
  */
 ll *get_children(ll *head, const binary_tree_t *parent)
 {
-	if (parent->left != NULL)
-	{
+	if (parent->left)
 		head = append(head, parent->left);
-	}
-	if (parent->right != NULL)
+	if (parent->right)
 		head = append(head, parent->right);
 	return (head);
 }
@@ -87,10 +83,8 @@ ll *append(ll *head, const binary_tree_t *btnode)
 	{
 		new->node = btnode;
 		new->next = NULL;
-		if (head == NULL)
-		{
+		if (!head)
 			head = new;
-		}
 		else
 		{
 			last = head;
